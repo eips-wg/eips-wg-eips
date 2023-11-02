@@ -1,0 +1,62 @@
+title = "Ethereum Improvement Proposals: @@working-group@@"
+description = "Ethereum Improvement Proposal (EIP): @@working-group@@."
+
+theme = "eips-theme"
+
+# `base_url` is required, but we set in build, so example.com is fine here.
+base_url = "https://example.com/"
+
+# Whether to automatically compile all Sass files in the sass directory
+compile_sass = true
+
+# Whether to build a search index to be used later on by a JavaScript library
+build_search_index = true
+
+taxonomies = [
+    { name = "status", feed = true },
+    { name = "category", feed = true },
+    { name = "type", feed = true },
+]
+
+generate_feed = true
+
+[link_checker]
+# TODO: Fix internal links.
+internal_level = "warn"
+
+[markdown]
+# Whether to do syntax highlighting
+# Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
+highlight_code = true
+
+highlight_theme = "css"
+
+highlight_themes_css = [
+    { theme = "base16-ocean-dark", filename = "assets/css/syntax-theme-dark.css" },
+    { theme = "base16-ocean-light", filename = "assets/css/syntax-theme-light.css" },
+]
+
+extra_syntaxes_and_themes = [
+    "../themes/eips-theme/syntaxes/solidity"
+]
+
+[extra]
+
+[[extra.working_groups]]
+name = "Core"
+url = "https://core.eips.fyi/"
+
+[[extra.working_groups]]
+name = "ERCs"
+url = "https://ercs.eips.fyi/"
+
+[[extra.working_groups]]
+name = "Governance"
+url = "https://eips.eips.fyi/"
+
+[[extra.working_groups]]
+name = "Wallets"
+url = "https://wallets.eips.fyi/"
+
+[extra.github]
+repository_url = "https://github.com/eips-wg/@@slug@@"
