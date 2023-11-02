@@ -10,6 +10,13 @@ on:
       - edited
 
 jobs:
+  banana:
+    name: banana
+    runs-on: ubuntu-latest
+    steps:
+      - env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: echo "$GITHUB_CONTEXT"
   ci:
     if: github.event.pull_request.base.repo.organization == 'eips-wg'
     uses: eips-wg/build/.github/workflows/ci.yml@master
