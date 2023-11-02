@@ -1,0 +1,14 @@
+on:
+  workflow_run:
+    workflows:
+      - Continuous Integration
+    types:
+      - completed
+
+name: Post Continuous Integration
+
+jobs:
+  ci:
+    if: github.event.repository.owner.name == 'eips-wg'
+    uses: eips-wg/build/.github/workflows/post-ci.yml@master
+    secrets: inherit

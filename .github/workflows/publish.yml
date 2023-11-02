@@ -1,0 +1,16 @@
+name: Publish
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  publish:
+    if: github.repository_owner == 'eips-wg'
+    uses: eips-wg/build/.github/workflows/publish.yml@master
+    secrets: inherit
+    permissions:
+      pages: write
+      id-token: write
+
