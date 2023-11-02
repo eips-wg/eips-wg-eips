@@ -1,0 +1,22 @@
+name: Review
+
+on:
+  workflow_run:
+    workflows:
+      - Review Trigger
+    types:
+      - completed
+
+jobs:
+  one:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dump GitHub context
+        env:
+          GITHUB_CONTEXT: ${{ toJSON(github) }}
+        run: echo "$GITHUB_CONTEXT"
+  review:
+    if: github.event.repository.base.repo.owner.login == 'eips-wg'
+    uses: eips-wg/build/.github/workflows/review.yml@master
+    secrets: inherit
+
