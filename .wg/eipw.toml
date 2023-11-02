@@ -1,0 +1,12 @@
+# eipw linter configuration file
+# see: https://github.com/ethereum/eipw
+#
+# This particular configuration enforces the rules of the @@slug@@ working
+# group.
+
+[lints.preamble-enum-type]
+kind = "preamble-one-of"
+name = "working-group"
+values = [
+    "@@slug@@",
+]

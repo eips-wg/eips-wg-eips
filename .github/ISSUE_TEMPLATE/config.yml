@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Do you want to propose a change to the EIP process itself?
+    url: https://github.com/ethereum-cat-herders/EIPIP/issues
+    about: Use the Ethereum Improvement Proposal Improvement Process (EIPIP) repository!
+  - name: Do you want to discuss EIP ideas or ask questions about the process?
+    url: https://ethereum-magicians.org/
+    about: Use the Fellowship of Ethereum Magicians for EIP-related discussion!
