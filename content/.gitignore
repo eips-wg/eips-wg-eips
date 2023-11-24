@@ -1,0 +1,8 @@
+**
+!/LICENSE.md
+!/.gitignore
+!/*.md
+!/*/
+!/*/index.md
+!/*/assets/
+!/*/assets/**
