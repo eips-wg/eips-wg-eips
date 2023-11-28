@@ -14,7 +14,6 @@ build_search_index = true
 
 taxonomies = [
     { name = "status", feed = true },
-    { name = "category", feed = true },
     { name = "type", feed = true },
 ]
 
