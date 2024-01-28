@@ -1,0 +1,27 @@
+name: Review Trigger
+
+on:
+  pull_request_target:
+  pull_request_review:
+  workflow_dispatch:
+    inputs:
+      pr_number:
+        description: Pull Request Number
+        type: string
+        required: true
+  issue_comment:
+    types:
+      - created
+
+jobs:
+  one:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dump GitHub context
+        env:
+          GITHUB_CONTEXT: ${{ toJSON(github) }}
+        run: echo "$GITHUB_CONTEXT"
+  review-trigger:
+    if: github.event.repository.owner.login == 'eips-wg'
+    uses: eips-wg/build/.github/workflows/review-trigger.yml@master
+    secrets: inherit

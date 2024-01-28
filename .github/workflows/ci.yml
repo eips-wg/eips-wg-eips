@@ -1,0 +1,16 @@
+name: Continuous Integration
+
+on:
+  pull_request:
+    types:
+      - opened
+      - reopened
+      - synchronize
+      - ready_for_review
+      - edited
+
+jobs:
+  ci:
+    if: github.event.pull_request.base.repo.owner.login == 'eips-wg'
+    uses: eips-wg/build/.github/workflows/ci.yml@master
+    secrets: inherit
